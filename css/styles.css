@@ -1,0 +1,46 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    padding-top: 20px;
+    }
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* ------ TEXT BLOCK ------ */
+
+h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+p {
+    text-align: justify;
+}
+
+
+/* ------ End of TEXT BLOCK ------ */
+.footer {
+
+}
+
+/* For Illustrations */
+
+.illustration {
+    max-width: 250px;
+}
+
+.picture2, .picture1 {
+    text-align:center;
+}
+
+.infoblock2 {
+    min-height: 300px;
+}
