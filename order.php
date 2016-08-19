@@ -55,27 +55,33 @@ $sqlquery = $pdo->prepare("INSERT INTO dbp_orders_collector (
           customer_newmail_num,
           customer_ip
           ) VALUES (
-          :customername, 
-          :customeremail, 
-          :customerphone, 
-          :customercity, 
-          :customernumber,
-          :customerip)");
-$sqlquery->execute(array('customername'    => $name,
-        'customeremail'   => $email,
-        'customerphone'   => $phone,
-        'customermessage' => $message,
-        'ip'              => $ip
+          :customer_name, 
+          :customer_email, 
+          :customer_phone, 
+          :customer_city, 
+          :customer_newmail_num,
+          :customer_ip)"
+);
+
+$sqlquery->execute(array(
+        'customer_name'    => $name,
+        'customer_email'   => $email,
+        'customer_phone'   => $phone,
+        'customer_city'    => $city,
+        'customer_newmail_num' => $nm_num,
+        'customer_ip'      => $ip
     ));
-    if(get_magic_quotes_gpc())
+
+if(get_magic_quotes_gpc())
     {
         $message = stripslashes($message);
     }
 
 
-    // Email на который должны приходить письма
+
+// Email на который должны приходить письма
     $to      = "alexbit@yandex.ru";
-    $subject  = "Уведомление о новом пользователе".$name;
+    $subject  = "Уведомление о новом заказе".$name;
 
     // сообщение
     $msg     = <<<HTML
@@ -89,16 +95,20 @@ IP  :             $ip
 ==========================================================
 Контактные данные:
 ==========================================================
-Телефон 1:        $phone
+Телефон:        $phone
 
 ----------------------------------------------------------
 E-Mail :          $email 
 ----------------------------------------------------------
 ==========================================================
-Примечание:
+Доставка на город:
 ==========================================================
-$message
+$city,  Отделение НП - $nm_num
 ----------------------------------------------------------
+==========================================================
+IP отправителя:
+==========================================================
+$ip
 
 HTML;
     mail($to, $subject, $msg, "From: $email\r\nReply-To: $email\r\nReturn-Path: $email\r\n");
