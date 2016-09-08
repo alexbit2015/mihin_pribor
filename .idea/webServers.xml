@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9bbc9d87-6d5c-428c-9572-f83810ba5f25" name="OpenServer" url="http://generator/">
+        <fileTransfer port="0" mountedRoot="F:\WEBSERVERS\OPENSERVER\OpenServer\domains\generator" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

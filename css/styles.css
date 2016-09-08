@@ -28,7 +28,9 @@ p {
 
 /* ------ End of TEXT BLOCK ------ */
 .footer {
-
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* For Illustrations */
@@ -43,4 +45,9 @@ p {
 
 .infoblock2 {
     min-height: 300px;
+}
+
+/*--------------- MODAL FORM ORDER -------------------- */
+.modal-footer-div {
+    text-align: center;
 }

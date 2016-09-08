@@ -188,35 +188,14 @@
 
 <footer>
     <div class="container footer">
-    <div class="row">
-        <div class="col-lg-4">
+        <div class="row">
+            <div class="col-md-12">
 
-            <form class="form-horizontal">
-                <div class="form-group row">
-                    <label for="footer-order-form" class="col-form-label">Имя</label>
-                     <input class="form-control input-lg" type="text" placeholder="Ваше имя" id="footer-order-form">
-                    <label for="form-email-input" class="col-form-label">Email</label>
-                    <input class="form-control input-lg" type="email" placeholder="yourmail@domain.com" id="form-email-input">
-                    <label for="form-tel-input" class="col-form-label">Телефон111</label>
-                    <input class="form-control input-lg" type="tel" placeholder="8-(0XX)-XXX-XXXX" id="form-tel-input">
-                    <button type="submit" class="btn btn-default input-lg">Заказать сборку</button>
-                </div>
-
-            </form>
-        </div>
-        <div class="col-lg-4">
-        <p>
-
-        </p>
-    </div>
-        <div class="col-lg-4">
-            <p>
-
-            </p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ordermodalform">Сделать заказ</button>
+                <div><img src="https://mc.yandex.ru/watch/39496055"/></div> <!--   style="position:absolute; left:-9999px;" alt=""    -->
+            </div>
         </div>
     </div>
-</div>
-
 </footer>
 <!-- End of Footer block -->
 
@@ -232,44 +211,46 @@
                 <p>Всего несколько шагов!</p>
                 <p>В данный момент мы работаем только с Новой Почтой по Украине и только наложенным платежем,
                     вам остается лишь указать ваш город и номер отделения в поле ниже.</p>
-                <form class="form-horizontal" action="order.php">
+
+                <!--- MODAL ORDER FORM------>
+                <form class="form-horizontal" action="order.php" method="post">
                     <div class="form-group row">
                         <label for="footer-order-form" class="col-xs-2 col-form-label">Имя</label>
                         <div class="col-xs-10">
-                            <input class="form-control input-lg" type="text" placeholder="Ваше имя" id="footer-order-form">
+                            <input name="customername" class="form-control input-lg" type="text" placeholder="Ваше имя" id="footer-order-form">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="form-email-input" class="col-xs-2 col-form-label">Email</label>
                         <div class="col-xs-10">
-                            <input class="form-control input-lg" type="email" placeholder="yourmail@domain.com" id="form-email-input">
+                            <input name="customeremail" class="form-control input-lg" type="email" placeholder="yourmail@domain.com" id="form-email-input">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="form-tel-input" class="col-xs-2 col-form-label">Телефон</label>
                         <div class="col-xs-10">
-                            <input class="form-control input-lg" type="tel" placeholder="8-(0XX)-XXX-XXXX" id="form-tel-input">
+                            <input name="customerphone" class="form-control input-lg" type="tel" placeholder="8-(0XX)-XXX-XXXX" id="form-tel-input">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="ordercity" class="col-xs-2 col-form-label">Город</label>
                         <div class="col-xs-10">
-                            <textarea class="form-control input-lg" id="ordercity" rows="1"></textarea>
+                            <textarea name="customercity" class="form-control input-lg" id="ordercity" rows="1"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="ordercity" class="col-xs-2 col-form-label">Отделение Новой Почты</label>
                         <div class="col-xs-10">
-                            <textarea class="form-control input-lg" id="ordercity" rows="1"></textarea>
+                            <textarea name="customernewmailnum" class="form-control input-lg" id="ordercity" rows="1"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer-div"><button type="submit" class="btn btn-success input-lg">Заказать</button></div>
 
 
-                </form>
+                </form> <!--- MODAL ORDER FORM------>
             </div>
             <div class="modal-footer modal-footer-div">
-                <button type="button" class="btn btn-primary">Вернутся назад</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Вернутся назад</button>
                 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ordermodalform">-->
             </div>
 
@@ -281,4 +262,32 @@
 </body>
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter39496055 = new Ya.Metrika({
+                    id:39496055,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+
+<!-- /Yandex.Metrika counter -->
 </html>

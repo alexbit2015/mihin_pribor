@@ -45,8 +45,6 @@ if(isset($_POST))
 
 
 
-
-
 $sqlquery = $pdo->prepare("INSERT INTO dbp_orders_collector (
           customer_name, 
           customer_email, 
